@@ -1,3 +1,6 @@
+/*Write a program that orders an array of numbers from smallest to largest. 
+All numbers in the array should be unique.*/
+
 let sortArrayOfNumbers = (array) => {
 	let result = []
 	for (let i = 0; i < array.length; i++) {
@@ -21,5 +24,5 @@ let sortArrayOfNumbers = (array) => {
 }
 
 test('sorting', () => {
-	expect(sortArrayOfNumbers([5, 4, 3, 2, 1])).toEqual([1, 2, 3, 4, 5])
+	expect(sortArrayOfNumbers([5, 5, 4, 3, 2, 1])).toEqual([1, 2, 3, 4, 5])
 })

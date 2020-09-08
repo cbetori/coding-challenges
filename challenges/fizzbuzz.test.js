@@ -1,3 +1,7 @@
+/*Write a program that prints the numbers from 0 to 5. 
+But for multiples of three print "fizz" instead of the number and for the multiples of five print "buzz". 
+For numbers which are multiples of both three and five print "fizzbuzz".*/
+
 let fizzBuzz = (number) => {
 	let result = []
 	for (let i = 0; i <= number; i++) {
