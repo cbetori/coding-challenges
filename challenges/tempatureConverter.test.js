@@ -7,11 +7,11 @@ const tempConverter = (temp) => {
 	let result
 	let tempMetric = temp[temp.length - 1]
 	let tempNumber = Math.round(temp.slice(0, -2))
-	if (tempMetric === 'C') {
+	if (tempMetric.toUpperCase() === 'C') {
 		result = tempNumber + 32
 		return result + '°F'
 	} else {
-		if (tempMetric === 'F') {
+		if (tempMetric.toUpperCase() === 'F') {
 			result = tempNumber - 32
 			return result + '°C'
 		} else {
@@ -34,4 +34,8 @@ test('tempature converter #3', () => {
 
 test('tempature converter #4', () => {
 	expect(tempConverter('32.7°F')).toEqual('1°C')
+})
+
+test('tempature converter #5', () => {
+	expect(tempConverter('32°f')).toEqual('0°C')
 })
