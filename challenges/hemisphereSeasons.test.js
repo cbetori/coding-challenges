@@ -13,7 +13,7 @@
 // (last day of Summer in the southern hemisphere). In this challenge, years are not used, so the last day of February will
 // always be the 28th.
 
-const dateTable = {
+const seasonTable = {
 	January: { N: 'Winter', S: 'Summer' },
 	February: { N: 'Winter', S: 'Summer' },
 	March: { N: 'Spring', S: 'Autumn' },
@@ -30,7 +30,7 @@ const dateTable = {
 
 const hemisphereSeason = (h, date) => {
 	let [month] = date.split(',')
-	return dateTable[month][h]
+	return seasonTable[month][h]
 }
 
 test('hempisphere season #1', () => {
