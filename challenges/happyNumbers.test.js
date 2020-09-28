@@ -14,7 +14,6 @@ const happyNumbers = (number) => {
 }
 
 const sumSquaredDigits = (number) => {
-	console.log(number)
 	const numString = number.toString()
 	let numTotal = 0
 	for (let i = 0; i < numString.length; i++) {

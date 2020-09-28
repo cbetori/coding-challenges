@@ -3,7 +3,6 @@
 //Each word in the phrase will be at least two characters long.
 
 const insertWhiteSpace = (string) => {
-	console.log(string.length)
 	let result = []
 	let stringStart = 0
 	let stringEnd = string.length
@@ -13,7 +12,6 @@ const insertWhiteSpace = (string) => {
 			string[i] === string[i].toUpperCase() &&
 			string[i - 1] === string[i - 1].toLowerCase()
 		) {
-			console.log()
 			result.push(string.slice(stringStart, i))
 			stringStart = i
 		}
