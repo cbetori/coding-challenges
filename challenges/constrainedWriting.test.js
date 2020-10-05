@@ -43,12 +43,64 @@ const tautogram = (string) => {
 		startingLetter.push(array[i][0].toUpperCase())
 	}
 	startingLetter = [...new Set(startingLetter)]
-
 	if (startingLetter.length === 1) return true
 	return false
 }
 
-const transgram = (string) => {}
+const alphabet = {
+	A: 0,
+	B: 0,
+	C: 0,
+	D: 0,
+	E: 0,
+	F: 0,
+	G: 0,
+	H: 0,
+	I: 0,
+	J: 0,
+	K: 0,
+	L: 0,
+	M: 0,
+	N: 0,
+	O: 0,
+	P: 0,
+	Q: 0,
+	R: 0,
+	S: 0,
+	T: 0,
+	U: 0,
+	V: 0,
+	W: 0,
+	X: 0,
+	Y: 0,
+	Z: 0,
+}
+
+const transgram = (string) => {
+	let letters = { ...alphabet }
+	let array = string.split(' ')
+	for (let i = 0; i < string.length; i++) {
+		let letter = string[i].toUpperCase()
+		if (typeof letters[letter] === 'number') {
+			letters[letter] = letters[letter] + 1
+		}
+	}
+	for (let i in letters) {
+		let result = 1
+		if (letters[i] >= array.length) {
+			for (let x = 0; x < array.length; x++) {
+				if (result === array.length) return true
+				for (let l = 0; l < array[x].length; l++) {
+					if (array[x][l].toUpperCase() === i) {
+						result++
+						break
+					}
+				}
+			}
+		}
+	}
+	return false
+}
 
 test('constrained writing #1', () => {
 	expect(constrained('The quick brown fox jumps over the lazy dog.')).toEqual(
