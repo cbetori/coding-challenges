@@ -23,6 +23,22 @@ let sortArrayOfNumbers = (array) => {
 	return result
 }
 
-test('sorting', () => {
+let sortArrayOfNumbersES6 = (array) => {
+	let result = array.sort((a, b) => a - b)
+	return [...new Set(result)]
+}
+
+test('sorting #1', () => {
 	expect(sortArrayOfNumbers([5, 5, 4, 3, 2, 1])).toEqual([1, 2, 3, 4, 5])
+})
+
+test('sorting #2', () => {
+	expect(sortArrayOfNumbersES6([5, 5, 4, 3, 2, 1, 10])).toEqual([
+		1,
+		2,
+		3,
+		4,
+		5,
+		10,
+	])
 })
